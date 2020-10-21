@@ -32,11 +32,14 @@ set softtabstop=4
 set expandtab
 set smartindent
 set nowrap
-set smartcase
 set noswapfile
 set nobackup
 set undodir=C:/.vim/undodir
 set undofile
+
+"search sets
+set ignorecase
+set smartcase
 set incsearch
 
 "paste from clipboard
