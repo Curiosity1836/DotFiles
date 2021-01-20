@@ -34,7 +34,7 @@ set smartindent
 set nowrap
 set noswapfile
 set nobackup
-set undodir=C:/.vim/undodir
+set undodir=~/.nvim/undodir
 set undofile
 
 "search sets
@@ -48,12 +48,15 @@ set clipboard+=unnamedplus
 "gitgutter suggested setting
 if has ('win64')
    let g:gitgutter_git_executable = 'C:\Program Files\Git\bin\git.exe'
+   set undodir=C:/.vim/undodir
 endif
 
 "Themeing
 colorscheme gruvbox
 let g:gruvbox_contrast_dark = 'hard'
+let g:gruvbox_transparent_bg = '1'
 "set background=dark
+highlight Normal ctermbg=NONE
 
 "basic configuration
 set number relativenumber
@@ -65,8 +68,14 @@ let mapleader="\<Space>"
 "buffers
 map gn :bn<cr>
 map gp :bp<cr>
-map gd :bd<cr>
+map gc :bd<cr>
 map gs :b
+map gl :ls<cr>
+
+"splits
+set splitright
+map <silent><nowait><leader>vs :vs<cr>
+map <silent><nowait><leader>vsb :vert belowright sb
 
 "line numbers
 nnoremap <silent> <F3> :exec &nu==&rnu "se nu!" : "se rnu!" <CR>
@@ -151,3 +160,7 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+"Exit input mode in terminal
+tnoremap <Esc> <C-\><C-n>
+"split terminal
+map <silent><nowait><leader>vt :vs <cr>:terminal <cr>
