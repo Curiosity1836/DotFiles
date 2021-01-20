@@ -74,6 +74,7 @@ map gl :ls<cr>
 
 "splits
 set splitright
+set splitbelow
 map <silent><nowait><leader>vs :vs<cr>
 map <silent><nowait><leader>vsb :vert belowright sb
 
@@ -164,3 +165,4 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 tnoremap <Esc> <C-\><C-n>
 "split terminal
 map <silent><nowait><leader>vt :vs <cr>:terminal <cr>
+map <silent><nowait><leader>ht :20 sp <cr>:terminal <cr>
